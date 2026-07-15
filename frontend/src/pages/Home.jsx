@@ -11,6 +11,7 @@ import {
   Home as HomeIcon,
   Activity,
   Receipt,
+  User,
 } from "lucide-react";
 
 const tiles = [
@@ -94,6 +95,14 @@ const tiles = [
     accent: "from-lime-500/10 to-lime-600/5",
     testid: "tile-whatsapp",
   },
+  {
+    to: "/contact",
+    title: "اتصل بي",
+    desc: "تواصل عبر البريد الإلكتروني أو تويتر.",
+    icon: User,
+    accent: "from-violet-500/10 to-violet-600/5",
+    testid: "tile-contact",
+  },
 ];
 
 const Home = () => {
@@ -171,7 +180,7 @@ const Home = () => {
                 </div>
                 <div>
                   <div className="font-serif-ar text-6xl leading-none text-[hsl(var(--gold))]">
-                    ١٠
+                    ١١
                   </div>
                   <div className="mt-2 text-primary-foreground/80 text-sm">
                     أدوات ذكيّة في مكان واحد

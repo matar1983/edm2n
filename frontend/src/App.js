@@ -14,6 +14,7 @@ import WhatsappSender from "@/pages/WhatsappSender";
 import BmiCalculator from "@/pages/BmiCalculator";
 import TaxCalculator from "@/pages/TaxCalculator";
 import MortgageCalculator from "@/pages/MortgageCalculator";
+import ContactMe from "@/pages/ContactMe";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
               <Route path="/hijri" element={<HijriPage />} />
               <Route path="/ai" element={<AiSites />} />
               <Route path="/whatsapp" element={<WhatsappSender />} />
+              <Route path="/contact" element={<ContactMe />} />
             </Routes>
           </Layout>
         </BrowserRouter>

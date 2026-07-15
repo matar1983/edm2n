@@ -14,6 +14,7 @@ const navItems = [
   { path: "/hijri", label: "الهجري" },
   { path: "/ai", label: "AI" },
   { path: "/whatsapp", label: "واتساب" },
+  { path: "/contact", label: "اتصل بي" },
 ];
 
 const Layout = ({ children }) => {
