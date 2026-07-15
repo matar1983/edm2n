@@ -25,6 +25,7 @@ const navItems = [
   { path: "/units", label: "الوحدات" },
   { path: "/numbers", label: "الأرقام" },
   { path: "/file-convert", label: "الصور" },
+  { path: "/file-tools", label: "محوّلات الملفات" },
   { path: "/weighted-avg", label: "النسبة الموزونة" },
   { path: "/contact", label: "اتصل بي" },
 ];

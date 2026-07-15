@@ -27,6 +27,7 @@ import NumberConverter from "@/pages/NumberConverter";
 import FileConverter from "@/pages/FileConverter";
 import WeightedAverage from "@/pages/WeightedAverage";
 import GoldPrices from "@/pages/GoldPrices";
+import FileTools from "@/pages/FileTools";
 
 function App() {
   return (
@@ -58,6 +59,7 @@ function App() {
               <Route path="/file-convert" element={<FileConverter />} />
               <Route path="/weighted-avg" element={<WeightedAverage />} />
               <Route path="/gold" element={<GoldPrices />} />
+              <Route path="/file-tools" element={<FileTools />} />
               <Route path="/contact" element={<ContactMe />} />
             </Routes>
           </Layout>

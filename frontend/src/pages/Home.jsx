@@ -24,6 +24,7 @@ import {
   FileImage,
   LineChart,
   Gem,
+  FileType2,
 } from "lucide-react";
 
 const tiles = [
@@ -204,6 +205,14 @@ const tiles = [
     testid: "tile-file",
   },
   {
+    to: "/file-tools",
+    title: "مركز محوّلات الملفات",
+    desc: "24 نوع تحويل: PDF, Word, Excel, HEIC, DWG, MP4...",
+    icon: FileType2,
+    accent: "from-orange-500/10 to-red-600/5",
+    testid: "tile-file-tools",
+  },
+  {
     to: "/contact",
     title: "اتصل بي",
     desc: "تواصل عبر البريد الإلكتروني أو تويتر.",
@@ -288,7 +297,7 @@ const Home = () => {
                 </div>
                 <div>
                   <div className="font-serif-ar text-6xl leading-none text-[hsl(var(--gold))]">
-                    ٢٣
+                    ٢٤
                   </div>
                   <div className="mt-2 text-primary-foreground/80 text-sm">
                     أداة ذكيّة في مكان واحد
