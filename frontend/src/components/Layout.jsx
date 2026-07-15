@@ -1,5 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { Moon, Sparkles } from "lucide-react";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const navItems = [
   { path: "/", label: "الرئيسية" },
@@ -53,16 +54,19 @@ const Layout = ({ children }) => {
               })}
             </nav>
 
-            <a
-              href="https://wa.me/966552211729"
-              target="_blank"
-              rel="noreferrer"
-              data-testid="header-contact-btn"
-              className="inline-flex items-center gap-2 rounded-full bg-[hsl(var(--gold))]/15 text-[hsl(var(--gold))] px-3 py-1.5 text-sm font-semibold hover:bg-[hsl(var(--gold))]/25 transition-colors"
-            >
-              <Sparkles className="w-4 h-4" />
-              تواصل
-            </a>
+            <div className="flex items-center gap-2">
+              <ThemeToggle />
+              <a
+                href="https://wa.me/966552211729"
+                target="_blank"
+                rel="noreferrer"
+                data-testid="header-contact-btn"
+                className="inline-flex items-center gap-2 rounded-full bg-[hsl(var(--gold))]/15 text-[hsl(var(--gold))] px-3 py-1.5 text-sm font-semibold hover:bg-[hsl(var(--gold))]/25 transition-colors"
+              >
+                <Sparkles className="w-4 h-4" />
+                تواصل
+              </a>
+            </div>
           </div>
 
           {/* Mobile / tablet nav scroller */}

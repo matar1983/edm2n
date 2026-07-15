@@ -11,8 +11,6 @@ body {
     font-family: "Rubik", "Segoe UI", "Tahoma", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: #faf7f2;
-    color: #1a1a1a;
 }
 
 .font-display {
@@ -48,21 +46,26 @@ body {
         --radius: 0.9rem;
     }
     .dark {
-        --background: 168 30% 8%;
+        --background: 168 30% 7%;
         --foreground: 39 30% 95%;
-        --card: 168 25% 12%;
+        --card: 168 22% 11%;
         --card-foreground: 39 30% 95%;
-        --primary: 42 55% 55%;
-        --primary-foreground: 168 40% 10%;
-        --secondary: 168 20% 18%;
+        --popover: 168 22% 11%;
+        --popover-foreground: 39 30% 95%;
+        --primary: 168 55% 45%;
+        --primary-foreground: 168 40% 8%;
+        --secondary: 168 18% 16%;
         --secondary-foreground: 39 30% 95%;
-        --muted: 168 20% 15%;
-        --muted-foreground: 39 15% 65%;
-        --accent: 168 25% 20%;
+        --muted: 168 18% 14%;
+        --muted-foreground: 39 15% 68%;
+        --accent: 168 22% 20%;
         --accent-foreground: 39 30% 95%;
-        --border: 168 20% 20%;
-        --input: 168 20% 20%;
-        --ring: 42 55% 55%;
+        --destructive: 0 70% 55%;
+        --destructive-foreground: 39 30% 95%;
+        --border: 168 18% 20%;
+        --input: 168 18% 20%;
+        --ring: 168 55% 45%;
+        --gold: 42 70% 62%;
     }
 }
 
@@ -80,12 +83,26 @@ body {
     background-image:
         radial-gradient(
             circle at 20% 10%,
-            rgba(13, 92, 77, 0.06),
+            hsl(var(--primary) / 0.06),
             transparent 40%
         ),
         radial-gradient(
             circle at 80% 90%,
-            rgba(184, 134, 11, 0.08),
+            hsl(var(--gold) / 0.08),
+            transparent 45%
+        );
+}
+
+.dark .arabesque-bg {
+    background-image:
+        radial-gradient(
+            circle at 20% 10%,
+            hsl(var(--primary) / 0.10),
+            transparent 40%
+        ),
+        radial-gradient(
+            circle at 80% 90%,
+            hsl(var(--gold) / 0.10),
             transparent 45%
         );
 }

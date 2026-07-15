@@ -161,15 +161,15 @@ const PctAddRemove = () => {
         <NumInput label="النسبة" value={p} onChange={setP} testid="percent-add-p" suffix="%" />
       </div>
       <div className="grid sm:grid-cols-2 gap-4 mt-6">
-        <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-5" data-testid="percent-add-plus">
-          <div className="text-xs text-emerald-700 mb-1">بإضافة {p || 0}%</div>
-          <div className="font-display font-bold text-2xl number-display text-emerald-900">
+        <div className="bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800/60 rounded-xl p-5" data-testid="percent-add-plus">
+          <div className="text-xs text-emerald-700 dark:text-emerald-300 mb-1">بإضافة {p || 0}%</div>
+          <div className="font-display font-bold text-2xl number-display text-emerald-900 dark:text-emerald-100">
             {fmt(add)}
           </div>
         </div>
-        <div className="bg-rose-50 border border-rose-200 rounded-xl p-5" data-testid="percent-add-minus">
-          <div className="text-xs text-rose-700 mb-1">بخصم {p || 0}%</div>
-          <div className="font-display font-bold text-2xl number-display text-rose-900">
+        <div className="bg-rose-50 dark:bg-rose-950/40 border border-rose-200 dark:border-rose-800/60 rounded-xl p-5" data-testid="percent-add-minus">
+          <div className="text-xs text-rose-700 dark:text-rose-300 mb-1">بخصم {p || 0}%</div>
+          <div className="font-display font-bold text-2xl number-display text-rose-900 dark:text-rose-100">
             {fmt(sub)}
           </div>
         </div>
