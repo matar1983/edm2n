@@ -14,6 +14,18 @@ const navItems = [
   { path: "/hijri", label: "الهجري" },
   { path: "/ai", label: "AI" },
   { path: "/whatsapp", label: "واتساب" },
+  { path: "/gold", label: "الذهب" },
+  { path: "/currency", label: "العملات" },
+  { path: "/car-fuel", label: "استهلاك السيارة" },
+  { path: "/travel", label: "تكلفة السفر" },
+  { path: "/eos", label: "نهاية الخدمة" },
+  { path: "/zakat", label: "الزكاة" },
+  { path: "/inheritance", label: "الميراث" },
+  { path: "/time-calc", label: "الوقت" },
+  { path: "/units", label: "الوحدات" },
+  { path: "/numbers", label: "الأرقام" },
+  { path: "/file-convert", label: "الصور" },
+  { path: "/weighted-avg", label: "النسبة الموزونة" },
   { path: "/contact", label: "اتصل بي" },
 ];
 

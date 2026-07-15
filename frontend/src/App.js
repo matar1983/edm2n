@@ -15,6 +15,18 @@ import BmiCalculator from "@/pages/BmiCalculator";
 import TaxCalculator from "@/pages/TaxCalculator";
 import MortgageCalculator from "@/pages/MortgageCalculator";
 import ContactMe from "@/pages/ContactMe";
+import CarFuel from "@/pages/CarFuel";
+import CurrencyConverter from "@/pages/CurrencyConverter";
+import TravelCost from "@/pages/TravelCost";
+import EndOfService from "@/pages/EndOfService";
+import ZakatCalc from "@/pages/ZakatCalc";
+import Inheritance from "@/pages/Inheritance";
+import TimeCalc from "@/pages/TimeCalc";
+import UnitConverter from "@/pages/UnitConverter";
+import NumberConverter from "@/pages/NumberConverter";
+import FileConverter from "@/pages/FileConverter";
+import WeightedAverage from "@/pages/WeightedAverage";
+import GoldPrices from "@/pages/GoldPrices";
 
 function App() {
   return (
@@ -34,6 +46,18 @@ function App() {
               <Route path="/hijri" element={<HijriPage />} />
               <Route path="/ai" element={<AiSites />} />
               <Route path="/whatsapp" element={<WhatsappSender />} />
+              <Route path="/car-fuel" element={<CarFuel />} />
+              <Route path="/currency" element={<CurrencyConverter />} />
+              <Route path="/travel" element={<TravelCost />} />
+              <Route path="/eos" element={<EndOfService />} />
+              <Route path="/zakat" element={<ZakatCalc />} />
+              <Route path="/inheritance" element={<Inheritance />} />
+              <Route path="/time-calc" element={<TimeCalc />} />
+              <Route path="/units" element={<UnitConverter />} />
+              <Route path="/numbers" element={<NumberConverter />} />
+              <Route path="/file-convert" element={<FileConverter />} />
+              <Route path="/weighted-avg" element={<WeightedAverage />} />
+              <Route path="/gold" element={<GoldPrices />} />
               <Route path="/contact" element={<ContactMe />} />
             </Routes>
           </Layout>

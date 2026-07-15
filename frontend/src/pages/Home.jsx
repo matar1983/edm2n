@@ -12,6 +12,18 @@ import {
   Activity,
   Receipt,
   User,
+  Fuel,
+  Coins,
+  Plane,
+  Briefcase,
+  HandCoins,
+  Scale,
+  Clock,
+  Ruler,
+  Hash,
+  FileImage,
+  LineChart,
+  Gem,
 } from "lucide-react";
 
 const tiles = [
@@ -94,6 +106,102 @@ const tiles = [
     icon: MessageCircle,
     accent: "from-lime-500/10 to-lime-600/5",
     testid: "tile-whatsapp",
+  },
+  {
+    to: "/gold",
+    title: "أسعار الذهب",
+    desc: "سعر الغرام لكل عيار + حاسبة قيمة حسب الوزن.",
+    icon: Gem,
+    accent: "from-yellow-500/10 to-yellow-600/5",
+    testid: "tile-gold",
+  },
+  {
+    to: "/currency",
+    title: "محوّل العملات",
+    desc: "تحويل بين 20+ عملة بأسعار حيّة.",
+    icon: Coins,
+    accent: "from-emerald-500/10 to-teal-600/5",
+    testid: "tile-currency",
+  },
+  {
+    to: "/car-fuel",
+    title: "استهلاك السيارة",
+    desc: "لتر/100كم + التكلفة لكل كيلومتر.",
+    icon: Fuel,
+    accent: "from-red-500/10 to-red-600/5",
+    testid: "tile-car",
+  },
+  {
+    to: "/travel",
+    title: "تكلفة السفر",
+    desc: "تذاكر + فندق + مواصلات + طعام.",
+    icon: Plane,
+    accent: "from-blue-500/10 to-blue-600/5",
+    testid: "tile-travel",
+  },
+  {
+    to: "/eos",
+    title: "نهاية الخدمة",
+    desc: "مكافأة الموظف وفق نظام العمل السعودي.",
+    icon: Briefcase,
+    accent: "from-slate-500/10 to-slate-600/5",
+    testid: "tile-eos",
+  },
+  {
+    to: "/zakat",
+    title: "حاسبة الزكاة",
+    desc: "زكاة المال 2.5% مع النصاب.",
+    icon: HandCoins,
+    accent: "from-amber-500/10 to-amber-600/5",
+    testid: "tile-zakat",
+  },
+  {
+    to: "/inheritance",
+    title: "الميراث الشرعي",
+    desc: "توزيع التركة على الورثة (مبسّط).",
+    icon: Scale,
+    accent: "from-purple-500/10 to-purple-600/5",
+    testid: "tile-inheritance",
+  },
+  {
+    to: "/time-calc",
+    title: "حاسبة الوقت",
+    desc: "الفرق بين وقتين + جمع/طرح.",
+    icon: Clock,
+    accent: "from-cyan-500/10 to-cyan-600/5",
+    testid: "tile-time",
+  },
+  {
+    to: "/units",
+    title: "محوّل الوحدات",
+    desc: "متر ↔ قدم، كجم ↔ باوند، °C ↔ °F ...",
+    icon: Ruler,
+    accent: "from-pink-500/10 to-pink-600/5",
+    testid: "tile-units",
+  },
+  {
+    to: "/numbers",
+    title: "محوّل الأرقام",
+    desc: "عربي ↔ إنجليزي + تفقيط (كتابة نصية).",
+    icon: Hash,
+    accent: "from-sky-500/10 to-sky-600/5",
+    testid: "tile-numbers",
+  },
+  {
+    to: "/weighted-avg",
+    title: "النسبة الموزونة",
+    desc: "متوسط مرجّح للدرجات والأوزان.",
+    icon: LineChart,
+    accent: "from-indigo-500/10 to-indigo-600/5",
+    testid: "tile-weighted",
+  },
+  {
+    to: "/file-convert",
+    title: "محوّل صيغ الصور",
+    desc: "PNG ↔ JPG ↔ WEBP داخل المتصفح.",
+    icon: FileImage,
+    accent: "from-fuchsia-500/10 to-fuchsia-600/5",
+    testid: "tile-file",
   },
   {
     to: "/contact",
@@ -180,10 +288,10 @@ const Home = () => {
                 </div>
                 <div>
                   <div className="font-serif-ar text-6xl leading-none text-[hsl(var(--gold))]">
-                    ١١
+                    ٢٣
                   </div>
                   <div className="mt-2 text-primary-foreground/80 text-sm">
-                    أدوات ذكيّة في مكان واحد
+                    أداة ذكيّة في مكان واحد
                   </div>
                 </div>
               </div>
