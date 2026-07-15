@@ -25,6 +25,22 @@ import {
   LineChart,
   Gem,
   FileType2,
+  Compass,
+  Circle,
+  TrendingUp,
+  Wallet,
+  QrCode,
+  KeyRound,
+  Type,
+  Users,
+  Timer,
+  CalendarClock,
+  GraduationCap,
+  Palette,
+  Rocket,
+  Link as LinkIcon,
+  Dice6,
+  Flame,
 } from "lucide-react";
 
 const tiles = [
@@ -220,6 +236,135 @@ const tiles = [
     accent: "from-violet-500/10 to-violet-600/5",
     testid: "tile-contact",
   },
+  // ========= الجزء الجديد =========
+  {
+    to: "/qibla",
+    title: "اتجاه القبلة",
+    desc: "حدّد موقعك واعرف اتجاه المسجد الحرام.",
+    icon: Compass,
+    accent: "from-emerald-500/10 to-emerald-600/5",
+    testid: "tile-qibla",
+  },
+  {
+    to: "/tasbih",
+    title: "عدّاد الأذكار",
+    desc: "مسبحة إلكترونية مع أدعية جاهزة.",
+    icon: Circle,
+    accent: "from-teal-500/10 to-teal-600/5",
+    testid: "tile-tasbih",
+  },
+  {
+    to: "/investment",
+    title: "نمو الاستثمار",
+    desc: "فائدة مركبة + مساهمات شهرية.",
+    icon: TrendingUp,
+    accent: "from-green-500/10 to-green-600/5",
+    testid: "tile-investment",
+  },
+  {
+    to: "/net-salary",
+    title: "الراتب الصافي",
+    desc: "بعد التأمينات الاجتماعية.",
+    icon: Wallet,
+    accent: "from-blue-500/10 to-blue-600/5",
+    testid: "tile-net-salary",
+  },
+  {
+    to: "/qr",
+    title: "مولّد QR Code",
+    desc: "رمز QR لأي نص أو رابط بلمسة.",
+    icon: QrCode,
+    accent: "from-slate-500/10 to-slate-600/5",
+    testid: "tile-qr",
+  },
+  {
+    to: "/password",
+    title: "كلمات مرور قوية",
+    desc: "توليد آمن + قياس القوّة.",
+    icon: KeyRound,
+    accent: "from-red-500/10 to-red-600/5",
+    testid: "tile-password",
+  },
+  {
+    to: "/text-tools",
+    title: "أدوات النصوص",
+    desc: "عدّاد + تحويلات + إزالة تشكيل.",
+    icon: Type,
+    accent: "from-sky-500/10 to-sky-600/5",
+    testid: "tile-text",
+  },
+  {
+    to: "/bill-split",
+    title: "قسمة الفاتورة",
+    desc: "بين مجموعة أصدقاء مع البقشيش.",
+    icon: Users,
+    accent: "from-amber-500/10 to-amber-600/5",
+    testid: "tile-bill",
+  },
+  {
+    to: "/pomodoro",
+    title: "مؤقّت التركيز",
+    desc: "Pomodoro: 25 عمل + 5 استراحة.",
+    icon: Timer,
+    accent: "from-rose-500/10 to-rose-600/5",
+    testid: "tile-pomodoro",
+  },
+  {
+    to: "/countdown",
+    title: "عدّاد تنازلي",
+    desc: "كم باقي على مناسبة أو تاريخ مهم.",
+    icon: CalendarClock,
+    accent: "from-cyan-500/10 to-cyan-600/5",
+    testid: "tile-countdown",
+  },
+  {
+    to: "/gpa",
+    title: "المعدل التراكمي GPA",
+    desc: "على مقياس 4.0 أو 5.0.",
+    icon: GraduationCap,
+    accent: "from-indigo-500/10 to-indigo-600/5",
+    testid: "tile-gpa",
+  },
+  {
+    to: "/colors",
+    title: "بالتة الألوان",
+    desc: "بالتات عشوائية بضغطة زر.",
+    icon: Palette,
+    accent: "from-pink-500/10 to-pink-600/5",
+    testid: "tile-colors",
+  },
+  {
+    to: "/planet-age",
+    title: "عمرك بالكواكب",
+    desc: "كم سنة تصبح على المريخ أو المشتري؟",
+    icon: Rocket,
+    accent: "from-purple-500/10 to-purple-600/5",
+    testid: "tile-planet",
+  },
+  {
+    to: "/social",
+    title: "فتح روابط سوشيال",
+    desc: "تلغرام / سناب / إنستقرام / تيك توك.",
+    icon: LinkIcon,
+    accent: "from-fuchsia-500/10 to-fuchsia-600/5",
+    testid: "tile-social",
+  },
+  {
+    to: "/lottery",
+    title: "سحب عشوائي / قرعة",
+    desc: "اختر فائزاً من قائمة أسماء.",
+    icon: Dice6,
+    accent: "from-yellow-500/10 to-yellow-600/5",
+    testid: "tile-lottery",
+  },
+  {
+    to: "/calories",
+    title: "السعرات اليومية",
+    desc: "BMR + TDEE + خطط للوزن.",
+    icon: Flame,
+    accent: "from-orange-500/10 to-orange-600/5",
+    testid: "tile-calories",
+  },
 ];
 
 const Home = () => {
@@ -297,7 +442,7 @@ const Home = () => {
                 </div>
                 <div>
                   <div className="font-serif-ar text-6xl leading-none text-[hsl(var(--gold))]">
-                    ٢٤
+                    ٤١
                   </div>
                   <div className="mt-2 text-primary-foreground/80 text-sm">
                     أداة ذكيّة في مكان واحد
