@@ -119,7 +119,7 @@ const HijriPage = () => {
             </div>
             <div className="grid grid-cols-7 gap-1">
               {monthData.cells.map((cell, idx) => (
-                <div key={idx} className="aspect-square">
+                <div key={cell ? `d-${cell.day}` : `blank-${idx}`} className="aspect-square">
                   {cell && (
                     <div
                       className={`w-full h-full rounded-lg flex flex-col items-center justify-center border transition-colors ${

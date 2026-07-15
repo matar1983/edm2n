@@ -159,7 +159,7 @@ const HijriToGreg = () => {
             className="w-full text-base bg-secondary/50 border border-border rounded-xl px-4 py-3 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
           >
             {HIJRI_MONTHS_AR.map((name, idx) => (
-              <option key={idx} value={idx}>{name}</option>
+              <option key={name} value={idx}>{name}</option>
             ))}
           </select>
         </label>
