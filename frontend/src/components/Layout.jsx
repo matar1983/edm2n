@@ -140,7 +140,13 @@ const Footer = () => {
           </div>
           <div className="text-center sm:text-left">
             برمجة وتصميم:{" "}
-            <span className="text-[hsl(var(--gold))] font-semibold">مطر الموايقي</span>
+            <a
+              href="mailto:edm2n@msn.com"
+              data-testid="credit-mowayqi-email"
+              className="text-[hsl(var(--gold))] font-semibold hover:underline underline-offset-4"
+            >
+              مطر الموايقي
+            </a>
           </div>
         </div>
       </div>
