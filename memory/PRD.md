@@ -1,38 +1,44 @@
 # دليل مطر الإلكتروني — PRD
 
 ## Original Problem Statement
-موقع "دليل مطر الإلكتروني" باللغة العربية (RTL) يحتوي على:
-- حاسبة التمويل الشخصي
-- حاسبة العمر
-- حاسبة النسبة المئوية
-- تحويل التاريخ (ميلادي ↔ هجري)
-- التاريخ الهجري (تقويم)
-- أهم مواقع الذكاء الاصطناعي
-- مراسلة رقم واتساب بدون إضافته
-- التذييل: الحقوق مع رابط واتساب 0552211729
+موقع "دليل مطر الإلكتروني" باللغة العربية (RTL) — أدوات وحاسبات ومحوّلات.
+- التذييل: الحقوق مع رابط واتساب `0552211729`
 - برمجة وتصميم: مطر العنزي، مطر الموايقي
 
 ## Architecture
-- **Frontend only** — React 19 + React Router v7 + Tailwind + shadcn.
-- No backend/API required (كل الحسابات client-side).
-- Hijri conversions: `moment-hijri` library.
+- **Frontend only** — React 19 + React Router v7 + Tailwind + shadcn + sonner.
+- No backend required (كل الحسابات client-side).
+- Hijri conversions: `moment-hijri`
+- Screenshot capture: `html-to-image`
 - Fonts: Reem Kufi + Rubik + Amiri (Google Fonts).
-- Design: RTL Arabic, أخضر زمردي `#0d5c4d` + ذهبي `#b8860b` + خلفية دافئة `#faf7f2`.
+- Theme: RTL Arabic, أخضر زمردي `#0d5c4d` + ذهبي `#b8860b` + خلفية دافئة `#faf7f2`.
+- Dark mode: ThemeProvider مع حفظ في localStorage.
 
 ## Implemented (2026-02)
-- `/` صفحة رئيسية بشبكة أدوات + hero
+### Pages (10)
+- `/` رئيسية بشبكة الأدوات + hero
 - `/finance` حاسبة قسط شهري (Annuity)
-- `/age` حاسبة عمر بتفاصيل السنة/شهر/يوم + إحصاءات + عيد ميلاد قادم
-- `/percent` 4 وضعيات (نسبة من عدد، كم يمثل، نسبة تغيّر، إضافة/خصم)
-- `/date-convert` ميلادي↔هجري (ثنائي الاتجاه)
-- `/hijri` بطاقة تاريخ اليوم + تقويم شهري تفاعلي
-- `/ai` دليل مواقع AI (25 موقع) + بحث + تصنيفات
-- `/whatsapp` منشئ روابط wa.me مع مفاتيح دول (20 دولة)
-- تذييل موحّد يظهر الحقوق + WhatsApp `wa.me/966552211729` + أسماء المصممَين
+- `/mortgage` حاسبة تمويل عقاري (سعر + دفعة مقدمة + نسبة + مدة)
+- `/age` حاسبة عمر (سنوات/شهور/أيام + إحصاءات + عيد ميلاد قادم)
+- `/bmi` حاسبة كتلة الجسم مع التصنيف والوزن المثالي
+- `/percent` حاسبة نسبة (4 أوضاع)
+- `/tax` حاسبة ضريبة VAT (إضافة/استخراج + presets)
+- `/date-convert` تحويل ميلادي↔هجري ثنائي الاتجاه
+- `/hijri` بطاقة اليوم + تقويم شهري هجري
+- `/ai` دليل ٢٥ موقع AI مع بحث + تصنيفات
+- `/whatsapp` مُنشئ روابط wa.me مع مفاتيح ٢٠ دولة
+
+### Features
+- **زر تبديل الوضع الداكن** في الهيدر (يحفظ في localStorage + prefers-color-scheme)
+- **مشاركة النتائج**: زر مشاركة موحّد `ShareResult` في كل حاسبة يحتوي:
+  - نسخ ملخص نصي جاهز
+  - نسخ/تنزيل صورة PNG للنتيجة (html-to-image)
+  - مشاركة عبر واتساب مباشرة
+  - مشاركة عبر تويتر
+- تذييل موحّد بجميع الصفحات + رابط `wa.me/966552211729`
 
 ## Backlog / Next Steps
-- P1: Dark mode toggle (المتغيرات جاهزة في CSS)
-- P1: PWA + install prompt
-- P2: مشاركة نتائج الحسابات (نسخ/صورة)
-- P2: حاسبات إضافية (قروض عقارية، ضريبة، BMI)
-- P2: تحسينات SEO ووسم Schema.org
+- P1: تحويل الموقع إلى PWA + تثبيت على الجوال
+- P2: حاسبات إضافية (استهلاك السيارة، سعر الصرف)
+- P2: SEO + Schema.org (Calculator markup)
+- P2: تحسين accessibility (ARIA labels، keyboard navigation)

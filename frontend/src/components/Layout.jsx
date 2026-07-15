@@ -5,11 +5,14 @@ import ThemeToggle from "@/components/ThemeToggle";
 const navItems = [
   { path: "/", label: "الرئيسية" },
   { path: "/finance", label: "التمويل" },
+  { path: "/mortgage", label: "العقاري" },
   { path: "/age", label: "العمر" },
+  { path: "/bmi", label: "BMI" },
   { path: "/percent", label: "النسبة" },
+  { path: "/tax", label: "الضريبة" },
   { path: "/date-convert", label: "تحويل التاريخ" },
-  { path: "/hijri", label: "التاريخ الهجري" },
-  { path: "/ai", label: "الذكاء الاصطناعي" },
+  { path: "/hijri", label: "الهجري" },
+  { path: "/ai", label: "AI" },
   { path: "/whatsapp", label: "واتساب" },
 ];
 
@@ -34,7 +37,7 @@ const Layout = ({ children }) => {
               </div>
             </Link>
 
-            <nav className="hidden lg:flex items-center gap-1" data-testid="header-nav">
+            <nav className="hidden xl:flex items-center gap-1" data-testid="header-nav">
               {navItems.map((item) => {
                 const active = location.pathname === item.path;
                 return (
@@ -71,7 +74,7 @@ const Layout = ({ children }) => {
 
           {/* Mobile / tablet nav scroller */}
           <nav
-            className="lg:hidden pb-3 -mx-1 overflow-x-auto no-scrollbar"
+            className="xl:hidden pb-3 -mx-1 overflow-x-auto no-scrollbar"
             data-testid="header-nav-mobile"
           >
             <div className="flex gap-2 px-1 min-w-max">

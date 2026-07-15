@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import PageHeader from "@/components/PageHeader";
+import ShareResult from "@/components/ShareResult";
 import { Percent } from "lucide-react";
 
 const TABS = [
@@ -79,8 +80,9 @@ const NumInput = ({ label, value, onChange, testid, suffix }) => (
   </label>
 );
 
-const ResultBox = ({ text, value, testid }) => (
+const ResultBox = ({ text, value, testid, forwardedRef }) => (
   <div
+    ref={forwardedRef}
     className="mt-6 bg-primary text-primary-foreground rounded-xl p-5"
     data-testid={testid}
   >
@@ -94,6 +96,7 @@ const ResultBox = ({ text, value, testid }) => (
 const PctOf = () => {
   const [p, setP] = useState("15");
   const [n, setN] = useState("2000");
+  const ref = useRef(null);
   const val = (parseFloat(p) / 100) * parseFloat(n);
   return (
     <div>
@@ -105,6 +108,12 @@ const PctOf = () => {
         text={`${p || 0}% من ${n || 0} تساوي`}
         value={fmt(val)}
         testid="percent-of-result"
+        forwardedRef={ref}
+      />
+      <ShareResult
+        title="حاسبة النسبة المئوية"
+        textLines={[`${p}% من ${n} = ${fmt(val)}`]}
+        targetRef={ref}
       />
     </div>
   );
@@ -113,6 +122,7 @@ const PctOf = () => {
 const PctWhat = () => {
   const [a, setA] = useState("30");
   const [b, setB] = useState("120");
+  const ref = useRef(null);
   const val = (parseFloat(a) / parseFloat(b)) * 100;
   return (
     <div>
@@ -124,6 +134,12 @@ const PctWhat = () => {
         text={`${a || 0} يمثل من ${b || 0}`}
         value={`${fmt(val)} %`}
         testid="percent-what-result"
+        forwardedRef={ref}
+      />
+      <ShareResult
+        title="حاسبة النسبة المئوية"
+        textLines={[`${a} من ${b} = ${fmt(val)}%`]}
+        targetRef={ref}
       />
     </div>
   );
@@ -132,6 +148,7 @@ const PctWhat = () => {
 const PctChange = () => {
   const [a, setA] = useState("100");
   const [b, setB] = useState("125");
+  const ref = useRef(null);
   const val = ((parseFloat(b) - parseFloat(a)) / parseFloat(a)) * 100;
   const dir = val > 0 ? "زيادة" : val < 0 ? "نقصان" : "بدون تغيّر";
   return (
@@ -144,6 +161,12 @@ const PctChange = () => {
         text={`نسبة التغيّر (${dir})`}
         value={`${fmt(Math.abs(val))} %`}
         testid="percent-change-result"
+        forwardedRef={ref}
+      />
+      <ShareResult
+        title="حاسبة النسبة المئوية"
+        textLines={[`من ${a} إلى ${b}: ${dir} بنسبة ${fmt(Math.abs(val))}%`]}
+        targetRef={ref}
       />
     </div>
   );
@@ -152,6 +175,7 @@ const PctChange = () => {
 const PctAddRemove = () => {
   const [n, setN] = useState("500");
   const [p, setP] = useState("15");
+  const ref = useRef(null);
   const add = parseFloat(n) * (1 + parseFloat(p) / 100);
   const sub = parseFloat(n) * (1 - parseFloat(p) / 100);
   return (
@@ -160,7 +184,7 @@ const PctAddRemove = () => {
         <NumInput label="العدد" value={n} onChange={setN} testid="percent-add-n" />
         <NumInput label="النسبة" value={p} onChange={setP} testid="percent-add-p" suffix="%" />
       </div>
-      <div className="grid sm:grid-cols-2 gap-4 mt-6">
+      <div ref={ref} className="grid sm:grid-cols-2 gap-4 mt-6">
         <div className="bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800/60 rounded-xl p-5" data-testid="percent-add-plus">
           <div className="text-xs text-emerald-700 dark:text-emerald-300 mb-1">بإضافة {p || 0}%</div>
           <div className="font-display font-bold text-2xl number-display text-emerald-900 dark:text-emerald-100">
@@ -174,6 +198,15 @@ const PctAddRemove = () => {
           </div>
         </div>
       </div>
+      <ShareResult
+        title="حاسبة النسبة المئوية"
+        textLines={[
+          `العدد: ${n}`,
+          `➕ بإضافة ${p}%: ${fmt(add)}`,
+          `➖ بخصم ${p}%: ${fmt(sub)}`,
+        ]}
+        targetRef={ref}
+      />
     </div>
   );
 };

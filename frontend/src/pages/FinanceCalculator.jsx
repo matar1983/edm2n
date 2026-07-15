@@ -1,11 +1,13 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef } from "react";
 import PageHeader from "@/components/PageHeader";
+import ShareResult from "@/components/ShareResult";
 import { Banknote } from "lucide-react";
 
 const FinanceCalculator = () => {
   const [amount, setAmount] = useState("100000");
   const [rate, setRate] = useState("5");
   const [years, setYears] = useState("5");
+  const shareRef = useRef(null);
 
   const result = useMemo(() => {
     const P = parseFloat(amount);
@@ -81,6 +83,7 @@ const FinanceCalculator = () => {
 
           {/* Results */}
           <div
+            ref={shareRef}
             className="bg-primary text-primary-foreground rounded-2xl p-6 sm:p-8 relative overflow-hidden"
             data-testid="finance-result-card"
           >
@@ -117,6 +120,19 @@ const FinanceCalculator = () => {
             </div>
           </div>
         </div>
+        {result && (
+          <ShareResult
+            title="حاسبة التمويل الشخصي"
+            textLines={[
+              `💰 مبلغ التمويل: ${fmt(parseFloat(amount))} ريال`,
+              `📈 نسبة الفائدة: ${rate}% لمدة ${years} سنة`,
+              `💳 القسط الشهري: ${fmt(result.monthly)} ريال`,
+              `📊 إجمالي المسدد: ${fmt(result.total)} ريال`,
+              `🔺 إجمالي الفوائد: ${fmt(result.totalInterest)} ريال`,
+            ]}
+            targetRef={shareRef}
+          />
+        )}
       </div>
     </div>
   );

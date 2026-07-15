@@ -8,6 +8,9 @@ import {
   Sparkles,
   MessageCircle,
   ArrowLeft,
+  Home as HomeIcon,
+  Activity,
+  Receipt,
 } from "lucide-react";
 
 const tiles = [
@@ -20,6 +23,14 @@ const tiles = [
     testid: "tile-finance",
   },
   {
+    to: "/mortgage",
+    title: "حاسبة التمويل العقاري",
+    desc: "احسب قسط منزلك مع الدفعة المقدمة.",
+    icon: HomeIcon,
+    accent: "from-indigo-500/10 to-indigo-600/5",
+    testid: "tile-mortgage",
+  },
+  {
     to: "/age",
     title: "حاسبة العمر",
     desc: "احسب عمرك بالسنة والشهر واليوم والساعة.",
@@ -28,12 +39,28 @@ const tiles = [
     testid: "tile-age",
   },
   {
+    to: "/bmi",
+    title: "حاسبة كتلة الجسم BMI",
+    desc: "قِس مؤشر كتلة جسمك واعرف تصنيفه.",
+    icon: Activity,
+    accent: "from-teal-500/10 to-teal-600/5",
+    testid: "tile-bmi",
+  },
+  {
     to: "/percent",
     title: "حاسبة النسبة المئوية",
     desc: "زيادة، نقصان، نسبة من عدد، والفرق بين رقمين.",
     icon: Percent,
     accent: "from-sky-500/10 to-sky-600/5",
     testid: "tile-percent",
+  },
+  {
+    to: "/tax",
+    title: "حاسبة الضريبة VAT",
+    desc: "أضف أو استخرج قيمة الضريبة من أي مبلغ.",
+    icon: Receipt,
+    accent: "from-orange-500/10 to-orange-600/5",
+    testid: "tile-tax",
   },
   {
     to: "/date-convert",
@@ -48,7 +75,7 @@ const tiles = [
     title: "التاريخ الهجري",
     desc: "تاريخ اليوم وتقويم شهري بالتقويم الهجري.",
     icon: CalendarDays,
-    accent: "from-teal-500/10 to-teal-600/5",
+    accent: "from-cyan-500/10 to-cyan-600/5",
     testid: "tile-hijri",
   },
   {
@@ -144,7 +171,7 @@ const Home = () => {
                 </div>
                 <div>
                   <div className="font-serif-ar text-6xl leading-none text-[hsl(var(--gold))]">
-                    ٧
+                    ١٠
                   </div>
                   <div className="mt-2 text-primary-foreground/80 text-sm">
                     أدوات ذكيّة في مكان واحد

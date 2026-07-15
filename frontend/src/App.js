@@ -11,6 +11,9 @@ import DateConverter from "@/pages/DateConverter";
 import HijriPage from "@/pages/HijriPage";
 import AiSites from "@/pages/AiSites";
 import WhatsappSender from "@/pages/WhatsappSender";
+import BmiCalculator from "@/pages/BmiCalculator";
+import TaxCalculator from "@/pages/TaxCalculator";
+import MortgageCalculator from "@/pages/MortgageCalculator";
 
 function App() {
   return (
@@ -21,8 +24,11 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/finance" element={<FinanceCalculator />} />
+              <Route path="/mortgage" element={<MortgageCalculator />} />
               <Route path="/age" element={<AgeCalculator />} />
+              <Route path="/bmi" element={<BmiCalculator />} />
               <Route path="/percent" element={<PercentCalculator />} />
+              <Route path="/tax" element={<TaxCalculator />} />
               <Route path="/date-convert" element={<DateConverter />} />
               <Route path="/hijri" element={<HijriPage />} />
               <Route path="/ai" element={<AiSites />} />

@@ -1,5 +1,6 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef } from "react";
 import PageHeader from "@/components/PageHeader";
+import ShareResult from "@/components/ShareResult";
 import { Cake } from "lucide-react";
 
 const AgeCalculator = () => {
@@ -7,6 +8,7 @@ const AgeCalculator = () => {
   const [today, setToday] = useState(
     new Date().toISOString().substring(0, 10)
   );
+  const shareRef = useRef(null);
 
   const result = useMemo(() => {
     if (!birth) return null;
@@ -94,7 +96,7 @@ const AgeCalculator = () => {
 
         {result ? (
           <>
-            <div className="bg-primary text-primary-foreground rounded-2xl p-6 sm:p-8 mb-4" data-testid="age-result-main">
+            <div ref={shareRef} className="bg-primary text-primary-foreground rounded-2xl p-6 sm:p-8 mb-4" data-testid="age-result-main">
               <div className="text-xs uppercase tracking-widest text-[hsl(var(--gold))] font-semibold mb-3">
                 عمرك بالتفصيل
               </div>
@@ -125,6 +127,16 @@ const AgeCalculator = () => {
                 testid="age-next-bd"
               />
             </div>
+            <ShareResult
+              title="حاسبة العمر"
+              textLines={[
+                `🎂 تاريخ الميلاد: ${birth}`,
+                `📅 عمرك: ${fmt(result.years)} سنة و ${fmt(result.months)} شهر و ${fmt(result.days)} يوم`,
+                `📊 إجمالي الأيام: ${fmt(result.totalDays)} يوم`,
+                `🎉 عيد ميلادك القادم بعد ${fmt(result.daysToBd)} يوم`,
+              ]}
+              targetRef={shareRef}
+            />
           </>
         ) : (
           <div className="bg-card border border-border rounded-2xl p-8 text-center text-muted-foreground">

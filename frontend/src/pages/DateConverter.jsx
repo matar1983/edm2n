@@ -1,5 +1,6 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef } from "react";
 import PageHeader from "@/components/PageHeader";
+import ShareResult from "@/components/ShareResult";
 import { CalendarSync, ArrowLeftRight } from "lucide-react";
 import moment from "moment-hijri";
 
@@ -59,6 +60,7 @@ const DateConverter = () => {
 
 const GregToHijri = () => {
   const [d, setD] = useState(new Date().toISOString().substring(0, 10));
+  const shareRef = useRef(null);
 
   const result = useMemo(() => {
     if (!d) return null;
@@ -87,15 +89,28 @@ const GregToHijri = () => {
       </label>
 
       {result && (
-        <ConversionResult
-          fromLabel="الميلادي"
-          fromValue={result.gregLabel}
-          arrowIcon
-          toLabel="الهجري"
-          toValue={`${toArabicNum(result.day)} ${HIJRI_MONTHS_AR[result.month]} ${toArabicNum(result.year)} هـ`}
-          weekday={result.weekday}
-          testid="g2h-result"
-        />
+        <>
+          <div ref={shareRef}>
+            <ConversionResult
+              fromLabel="الميلادي"
+              fromValue={result.gregLabel}
+              arrowIcon
+              toLabel="الهجري"
+              toValue={`${toArabicNum(result.day)} ${HIJRI_MONTHS_AR[result.month]} ${toArabicNum(result.year)} هـ`}
+              weekday={result.weekday}
+              testid="g2h-result"
+            />
+          </div>
+          <ShareResult
+            title="تحويل التاريخ ميلادي → هجري"
+            textLines={[
+              `📆 ${result.weekday}`,
+              `الميلادي: ${result.gregLabel}`,
+              `الهجري: ${toArabicNum(result.day)} ${HIJRI_MONTHS_AR[result.month]} ${toArabicNum(result.year)} هـ`,
+            ]}
+            targetRef={shareRef}
+          />
+        </>
       )}
     </div>
   );
@@ -106,6 +121,7 @@ const HijriToGreg = () => {
   const [y, setY] = useState(String(now.iYear()));
   const [m, setM] = useState(String(now.iMonth()));
   const [d, setD] = useState(String(now.iDate()));
+  const shareRef = useRef(null);
 
   const result = useMemo(() => {
     const yy = parseInt(y), mm = parseInt(m), dd = parseInt(d);
@@ -160,15 +176,28 @@ const HijriToGreg = () => {
       </div>
 
       {result && (
-        <ConversionResult
-          fromLabel="الهجري"
-          fromValue={result.hijriLabel}
-          arrowIcon
-          toLabel="الميلادي"
-          toValue={result.gregLabel}
-          weekday={result.weekday}
-          testid="h2g-result"
-        />
+        <>
+          <div ref={shareRef}>
+            <ConversionResult
+              fromLabel="الهجري"
+              fromValue={result.hijriLabel}
+              arrowIcon
+              toLabel="الميلادي"
+              toValue={result.gregLabel}
+              weekday={result.weekday}
+              testid="h2g-result"
+            />
+          </div>
+          <ShareResult
+            title="تحويل التاريخ هجري → ميلادي"
+            textLines={[
+              `📆 ${result.weekday}`,
+              `الهجري: ${result.hijriLabel}`,
+              `الميلادي: ${result.gregLabel}`,
+            ]}
+            targetRef={shareRef}
+          />
+        </>
       )}
     </div>
   );
