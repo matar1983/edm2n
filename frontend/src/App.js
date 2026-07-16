@@ -44,6 +44,26 @@ import PlanetAge from "@/pages/PlanetAge";
 import SocialLinks from "@/pages/SocialLinks";
 import Lottery from "@/pages/Lottery";
 import Calories from "@/pages/Calories";
+import Ramadan from "@/pages/Ramadan";
+import Pregnancy from "@/pages/Pregnancy";
+import BodyComp from "@/pages/BodyComp";
+import Sleep from "@/pages/Sleep";
+import Wedding from "@/pages/Wedding";
+import Budget from "@/pages/Budget";
+import Electricity from "@/pages/Electricity";
+import Retirement from "@/pages/Retirement";
+import UniScore from "@/pages/UniScore";
+import FinalGrade from "@/pages/FinalGrade";
+import JsonFormatter from "@/pages/JsonFormatter";
+import Base64Tool from "@/pages/Base64Tool";
+import TimestampConv from "@/pages/TimestampConv";
+import NumberBases from "@/pages/NumberBases";
+import ColorConv from "@/pages/ColorConv";
+import WorldClock from "@/pages/WorldClock";
+import Stopwatch from "@/pages/Stopwatch";
+import HashtagGen from "@/pages/HashtagGen";
+import LoremArabic from "@/pages/LoremArabic";
+import WheelOfFortune from "@/pages/WheelOfFortune";
 
 function App() {
   return (
@@ -92,6 +112,26 @@ function App() {
               <Route path="/social" element={<SocialLinks />} />
               <Route path="/lottery" element={<Lottery />} />
               <Route path="/calories" element={<Calories />} />
+              <Route path="/ramadan" element={<Ramadan />} />
+              <Route path="/pregnancy" element={<Pregnancy />} />
+              <Route path="/body-comp" element={<BodyComp />} />
+              <Route path="/sleep" element={<Sleep />} />
+              <Route path="/wedding" element={<Wedding />} />
+              <Route path="/budget" element={<Budget />} />
+              <Route path="/electricity" element={<Electricity />} />
+              <Route path="/retirement" element={<Retirement />} />
+              <Route path="/uni-score" element={<UniScore />} />
+              <Route path="/final-grade" element={<FinalGrade />} />
+              <Route path="/json" element={<JsonFormatter />} />
+              <Route path="/base64" element={<Base64Tool />} />
+              <Route path="/timestamp" element={<TimestampConv />} />
+              <Route path="/number-bases" element={<NumberBases />} />
+              <Route path="/color-conv" element={<ColorConv />} />
+              <Route path="/world-clock" element={<WorldClock />} />
+              <Route path="/stopwatch" element={<Stopwatch />} />
+              <Route path="/hashtags" element={<HashtagGen />} />
+              <Route path="/lorem" element={<LoremArabic />} />
+              <Route path="/wheel" element={<WheelOfFortune />} />
               <Route path="/contact" element={<ContactMe />} />
             </Routes>
           </Layout>

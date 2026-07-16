@@ -1,46 +1,13 @@
 import { Link } from "react-router-dom";
 import {
-  Banknote,
-  Cake,
-  Percent,
-  CalendarSync,
-  CalendarDays,
-  Sparkles,
-  MessageCircle,
-  ArrowLeft,
-  Home as HomeIcon,
-  Activity,
-  Receipt,
-  User,
-  Fuel,
-  Coins,
-  Plane,
-  Briefcase,
-  HandCoins,
-  Scale,
-  Clock,
-  Ruler,
-  Hash,
-  FileImage,
-  LineChart,
-  Gem,
-  FileType2,
-  Compass,
-  Circle,
-  TrendingUp,
-  Wallet,
-  QrCode,
-  KeyRound,
-  Type,
-  Users,
-  Timer,
-  CalendarClock,
-  GraduationCap,
-  Palette,
-  Rocket,
-  Link as LinkIcon,
-  Dice6,
-  Flame,
+  Banknote, Cake, Percent, CalendarSync, CalendarDays, Sparkles, MessageCircle,
+  ArrowLeft, Home as HomeIcon, Activity, Receipt, User, Fuel, Coins, Plane,
+  Briefcase, HandCoins, Scale, Clock, Ruler, Hash, FileImage, LineChart, Gem,
+  FileType2, Compass, Circle, TrendingUp, Wallet, QrCode, KeyRound, Type,
+  Users, Timer, CalendarClock, GraduationCap, Palette, Rocket, Link as LinkIcon,
+  Dice6, Flame, Moon, Baby, Dumbbell, Bed, Heart, PiggyBank, Zap, UserCog,
+  School, Target, Braces, Code2, Binary, Paintbrush2, Globe, StopCircle,
+  AlignJustify,
 } from "lucide-react";
 
 const tiles = [
@@ -365,6 +332,26 @@ const tiles = [
     accent: "from-orange-500/10 to-orange-600/5",
     testid: "tile-calories",
   },
+  { to: "/ramadan", title: "رمضان", desc: "عدّاد رمضان القادم أو الحالي.", icon: Moon, accent: "from-primary/10 to-primary/5", testid: "tile-ramadan" },
+  { to: "/pregnancy", title: "حاسبة الحمل", desc: "أسبوع الحمل + موعد الولادة.", icon: Baby, accent: "from-pink-500/10 to-pink-600/5", testid: "tile-pregnancy" },
+  { to: "/body-comp", title: "اللياقة والدهون", desc: "% الدهون + الوزن المثالي.", icon: Dumbbell, accent: "from-red-500/10 to-red-600/5", testid: "tile-body-comp" },
+  { to: "/sleep", title: "حاسبة النوم", desc: "متى تنام لتستيقظ نشيطاً.", icon: Bed, accent: "from-indigo-500/10 to-indigo-600/5", testid: "tile-sleep" },
+  { to: "/wedding", title: "تكلفة الزواج", desc: "ميزانية شاملة لحفل الزفاف.", icon: Heart, accent: "from-rose-500/10 to-rose-600/5", testid: "tile-wedding" },
+  { to: "/budget", title: "الميزانية الشهرية", desc: "دخل ومصاريف + نسبة التوفير.", icon: PiggyBank, accent: "from-emerald-500/10 to-emerald-600/5", testid: "tile-budget" },
+  { to: "/electricity", title: "استهلاك الكهرباء", desc: "تقدير الفاتورة الشهرية.", icon: Zap, accent: "from-yellow-500/10 to-yellow-600/5", testid: "tile-electricity" },
+  { to: "/retirement", title: "الوقت للتقاعد", desc: "كم باقي على تقاعدك.", icon: UserCog, accent: "from-slate-500/10 to-slate-600/5", testid: "tile-retirement" },
+  { to: "/uni-score", title: "نسبة الجامعة", desc: "ثانوية + قدرات + تحصيلي.", icon: School, accent: "from-blue-500/10 to-blue-600/5", testid: "tile-uni" },
+  { to: "/final-grade", title: "الدرجة النهائية", desc: "كم أحتاج في النهائي؟", icon: Target, accent: "from-purple-500/10 to-purple-600/5", testid: "tile-final-grade" },
+  { to: "/json", title: "JSON Formatter", desc: "تنسيق وتصغير JSON للمطورين.", icon: Braces, accent: "from-gray-500/10 to-gray-600/5", testid: "tile-json" },
+  { to: "/base64", title: "Base64", desc: "تشفير/فك تشفير النصوص.", icon: Code2, accent: "from-cyan-500/10 to-cyan-600/5", testid: "tile-base64" },
+  { to: "/timestamp", title: "Unix Timestamp", desc: "بين الرقم والتاريخ.", icon: Clock, accent: "from-teal-500/10 to-teal-600/5", testid: "tile-timestamp" },
+  { to: "/number-bases", title: "أنظمة العد", desc: "عشري ↔ ثنائي ↔ Hex.", icon: Binary, accent: "from-stone-500/10 to-stone-600/5", testid: "tile-bases" },
+  { to: "/color-conv", title: "محوّل الألوان", desc: "HEX ↔ RGB ↔ HSL.", icon: Paintbrush2, accent: "from-fuchsia-500/10 to-fuchsia-600/5", testid: "tile-color-conv" },
+  { to: "/world-clock", title: "ساعة عالمية", desc: "أوقات مدن العالم.", icon: Globe, accent: "from-sky-500/10 to-sky-600/5", testid: "tile-world-clock" },
+  { to: "/stopwatch", title: "ساعة إيقاف", desc: "Stopwatch + تسجيل الأشواط.", icon: StopCircle, accent: "from-emerald-500/10 to-emerald-600/5", testid: "tile-stopwatch" },
+  { to: "/hashtags", title: "مولّد هاشتاقات", desc: "هاشتاقات عربية لأي موضوع.", icon: Hash, accent: "from-violet-500/10 to-violet-600/5", testid: "tile-hashtags" },
+  { to: "/lorem", title: "Lorem Ipsum عربي", desc: "نص تجريبي عربي للتصاميم.", icon: AlignJustify, accent: "from-amber-500/10 to-amber-600/5", testid: "tile-lorem" },
+  { to: "/wheel", title: "دولاب الحظ", desc: "اختر عشوائياً بلمسة بصرية.", icon: Circle, accent: "from-red-500/10 to-red-600/5", testid: "tile-wheel" },
 ];
 
 const Home = () => {
@@ -442,7 +429,7 @@ const Home = () => {
                 </div>
                 <div>
                   <div className="font-serif-ar text-6xl leading-none text-[hsl(var(--gold))]">
-                    ٤١
+                    ٦١
                   </div>
                   <div className="mt-2 text-primary-foreground/80 text-sm">
                     أداة ذكيّة في مكان واحد
