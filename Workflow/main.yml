@@ -1,0 +1,50 @@
+name: Project CI/CD
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  # 1. وظيفة لفحص كود الواجهة الأمامية (Frontend)
+  frontend-check:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Node.js
+      uses: actions/setup-python@v5 # سنقوم بتهيئة نود لتشغيل فحص ملفات الجافا سكريبت
+      with:
+        node-version: '18'
+
+    - name: Install Frontend Dependencies
+      run: |
+        if [ -f package.json ]; then npm install; fi
+
+  # 2. وظيفة لفحص كود الواجهة الخلفية (Backend)
+  backend-check:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+
+    - name: Install Backend Dependencies
+      run: |
+        # يذهب للمجلد الخلفي ويقوم بتثبيت المكتبات الخاصة به إذا وجدت
+        cd backend
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        if [ ! -f requirements.txt ]; then pip install flask; fi
+
+    - name: Test run backend script
+      run: |
+        cd backend
+        # يبحث عن أي ملف تشغيل رئيسي في مجلد الباك اند ويتحقق من سلامته برمجياً
+        if [ -f app.py ]; then python -m py_compile app.py; fi
+        if [ -f main.py ]; then python -m py_compile main.py; fi
