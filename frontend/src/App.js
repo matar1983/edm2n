@@ -2,8 +2,10 @@ import "@/App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Toaster } from "sonner";
 import { ThemeProvider } from "@/contexts/ThemeContext";
+import { FavoritesProvider } from "@/contexts/FavoritesContext";
 import Layout from "@/components/Layout";
 import Home from "@/pages/Home";
+import Category from "@/pages/Category";
 import FinanceCalculator from "@/pages/FinanceCalculator";
 import AgeCalculator from "@/pages/AgeCalculator";
 import PercentCalculator from "@/pages/PercentCalculator";
@@ -69,10 +71,12 @@ function App() {
   return (
     <div className="App">
       <ThemeProvider>
-        <BrowserRouter>
-          <Layout>
-            <Routes>
-              <Route path="/" element={<Home />} />
+        <FavoritesProvider>
+          <BrowserRouter>
+            <Layout>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/category/:id" element={<Category />} />
               <Route path="/finance" element={<FinanceCalculator />} />
               <Route path="/mortgage" element={<MortgageCalculator />} />
               <Route path="/age" element={<AgeCalculator />} />
@@ -133,9 +137,10 @@ function App() {
               <Route path="/lorem" element={<LoremArabic />} />
               <Route path="/wheel" element={<WheelOfFortune />} />
               <Route path="/contact" element={<ContactMe />} />
-            </Routes>
-          </Layout>
-        </BrowserRouter>
+              </Routes>
+            </Layout>
+          </BrowserRouter>
+        </FavoritesProvider>
         <Toaster position="top-center" richColors dir="rtl" />
       </ThemeProvider>
     </div>
