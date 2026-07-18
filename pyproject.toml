@@ -1,0 +1,13 @@
+[project]
+name = "edm2n"
+version = "0.1.0"
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "motor",
+    "python-dotenv",
+    "pydantic"
+]
+
+[tool.vercel]
+entrypoint = "backend.api:app"
