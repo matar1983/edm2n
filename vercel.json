@@ -1,11 +1,11 @@
 {
   "functions": {
-    "backend/server.py": {
+    "backend/api.py": {
       "runtime": "vercel-python@3.12.0"
     }
   },
   "routes": [
-    { "src": "/api/(.*)", "dest": "backend/server.py" },
+    { "src": "/api/(.*)", "dest": "backend/api.py" },
     { "src": "/(.*)", "dest": "frontend/$1" }
   ]
 }
