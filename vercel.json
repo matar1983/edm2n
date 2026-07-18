@@ -4,8 +4,14 @@
       "runtime": "vercel-python@3.12"
     }
   },
-  "rewrites": [
-    { "source": "/api/(.*)", "destination": "/backend/server.py" },
-    { "source": "/(.*)", "destination": "/frontend/$1" }
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "backend/server.py"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "frontend/$1"
+    }
   ]
 }
